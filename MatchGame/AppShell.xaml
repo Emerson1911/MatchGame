@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MatchGame.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MatchGame"
+    xmlns:views="clr-namespace:MatchGame.views"
+    FlyoutHeaderBehavior="CollapseOnScroll">
+
+    <Shell.FlyoutHeaderTemplate>
+    <DataTemplate>
+        <Grid BackgroundColor="AliceBlue"
+                  HeightRequest="150">
+            <Image Aspect="AspectFill"
+                       Source="raiden2.gif"
+                IsAnimationPlaying="True"
+                       Opacity="0.6"/>
+            <Label Text="Perfil"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="End"
+                       HorizontalOptions="Center"/>
+        </Grid>
+    </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    <ShellContent Title="Inicio"
+                  ContentTemplate="{DataTemplate views:Inicio}"/>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent Title="Animales" 
+                  ContentTemplate="{DataTemplate views:Nivel1}"/>
+        <ShellContent Title="Carros" 
+                  ContentTemplate="{DataTemplate views:Nivel2}"/>
+        <ShellContent Title="Inicio" 
+                  ContentTemplate="{DataTemplate views:SignUp}"/>
+        <ShellContent Title="Registrar"
+                      ContentTemplate="{DataTemplate views:SignInpage}"/>
+        <ShellContent Title="Acerca del juego" 
+                  ContentTemplate="{DataTemplate views:Acercade}"/>
+    </FlyoutItem>
+
+</Shell>
